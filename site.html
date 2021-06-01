@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102526491-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-102526491-3');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>ELEPHANT.MONEY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font/iconsmind/style.css?t=1620896913521" />
+    <link rel="stylesheet" href="font/simple-line-icons/css/simple-line-icons.css?t=1620896913521" />
+    <link rel="stylesheet" href="css/index.css?t=1620896913521" />
+    <style>
+        .label-btn {
+            display: inline-block;
+            border: 1px solid #424242;
+            width: 28px;
+            height: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .label-btn:hover {
+            color: #969696;
+        }
+
+        .row-main-form {
+            margin-top: 55px;
+        }
+
+        .form-control[readonly] {
+            border: 1px solid #424242;
+            background: #232223;
+            cursor: not-allowed;
+        }
+
+        .numbers-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .number-wrap {
+            width: 160px;
+            height: 160px;
+            border: 1px solid #424242;
+            border-radius: 0.1rem;
+            margin-left: 5px;
+        }
+
+        .number-wrap:first-child {
+            margin-left: 0;
+        }
+
+        .luck-title {
+            /*font-family: 'Lobster', cursive;*/
+            font-size: 8rem !important;
+            color: whitesmoke;
+        }
+
+        .jackpot-title {
+            font-family: 'Raleway Dots', cursive;
+            font-size: 4rem !important;
+            line-height: normal;
+            color: white;
+        }
+
+        .number-wrap .digit {
+            font-size: 80px;
+            line-height: normal;
+            font-weight: 700;
+        }
+
+        .number-wrap .digit-title {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .noUi-tooltip,
+        .noUi-handle {
+            cursor: pointer;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0;
+            /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+            /* Firefox */
+        }
+
+        #rollBtn {
+            font-size: 1.4rem;
+            line-height: 1.0;
+        }
+
+        .rolling-text {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                color: #ffffff;
+            }
+            100% {
+                color: #86367e;
+            }
+        }
+
+        #topStatsContainer i {
+            background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#145388));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        #topStatsContainer i.large-icon {
+            font-size: 40px;
+            line-height: 35px;
+        }
+
+        #topStatsContainer .price-top-part>.text-large {
+            font-size: 22px !important;
+        }
+
+        #jackpotContainer .price-top-part>.text-large {
+            font-size: 22px !important;
+        }
+    </style>
+</head>
+
+<body class="show-spinner">
+    <div class="landing-page">
+        <div class="mobile-menu">
+
+            <ul id="site-menu" class="navbar-nav">
+            </ul>
+        </div>
+
+        <div class="main-container">
+            <nav class="landing-page-nav">
+                <div class="container d-flex align-items-center justify-content-between">
+                    <a class="pull-left" href="/">
+                        <image width="64px" class="mr-2" src="/android-chrome-192x192.png" /><span class="text-white">ELEPHANT.MONEY</span>
+                    </a>
+
+                    <a href="#" class="d-lg-flex mobile-menu-button">
+                    <i class="simple-icon-menu"></i>
+                </a>
+                </div>
+            </nav>
+
+            <div class="content-container" id="home">
+                <div class="section home">
+                    <div class="container">
+                        <div class="row home-row mb-2">
+                            <div class="modal fade" id="tronWebModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">TronWeb Not Detected</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Metamask is required for access to ELEPHANT.MONEY</h3>
+                                            <p>If you have MetaMask installed make sure you are logged in or have a wallet selected
+                                            </p>
+
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">Close
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="invalidAmountModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Whoops!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Enter Amount in BDO</h3>
+                                            <p>Please enter a valid integer amount, the minimum is 10. Thanks! </p>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">Close
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="invalidAddressModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Whoops!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Enter a valid BDO Address</h3>
+                                            <p>Please check that BDO address again. Thanks! </p>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">Close
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="invalidRefAddressModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Whoops!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Invalid BDO Address Detected in Referral Link</h3>
+                                            <p>Please check that BDO address again. Thanks! </p>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">Close
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="txModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Transaction Complete</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>You can track your transaction below</h3>
+                                            <p>Check on Etherscan: <span class="notranslate" id="txId"></span></p>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">Close
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="txModalLuck" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Transaction not found</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>You can track your transaction below</h3>
+                                            <p>Check on Tronscan: <span class="notranslate" id="txIdLuck"></span></p>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">Close
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="txErrorModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Whoops!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Web3 Reported a Problem</h3>
+                                            <p id="txErrorId"></p>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">Close
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Houston, we have a problem!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Check your gauges</h3>
+                                            <p id="errorId"></p>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">Close
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Hey There!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3 id="alertTitle">Check your gauges</h3>
+                                            <p id="alertId"></p>
+                                        </div>
+                                        <div class="modal-footer text-center">
+                                            <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">Close
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                        <div class="row mb-4 mt-2">
+                            <div class="container col-12 col-xl-6 col-lg-6 col-md-6 mb-4 pt-4">
+                                <div class="home-text text-center row mb-4 mt-4">
+                                    <div class="col-12 text-center">
+                                        <div class="mb-2 text-center notranslate"><img width="140px" src="/img/logo/bdollar.png" /></div>
+                                        <h1>404</h1>
+
+                                    </div>
+                                </div>
+                                <h3 class="text-center text-white-50"><span class="notranslate" id="user-estimate"></span>
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+                    <div class="section footer mb-0">
+                        <div class="container">
+                            <div class="row footer-row">
+                                <div class="col-12 text-right">
+                                    <a class="btn btn-circle btn-outline-semi-light footer-circle-button scrollTo" href="#home" id="footerCircleButton"><i
+                                        class="simple-icon-arrow-up"></i></a>
+                                </div>
+                                <div class="col-12 text-center footer-content">
+
+                                </div>
+                            </div>
+                            <div class="row" id="footerMenuAccordion">
+
+                            </div>
+                        </div>
+                        <div class="separator mt-5"></div>
+                        <div class="container copyright pt-5 pb-5">
+                            <div class="row">
+                                <div class="col-12 mb-4">Please do your own research before using this application. To the greatest extent possible the ELEPHANT.MONEY protocol has been implemented to be accessible directly on-chain without a user interface. This website and associated
+                                    APIs have been provided for convenience.<br><br> Ultimately you are interacting with no other party other than the blockchain itself and are 100% responsible for your transactions. Please do your own research before
+                                    interacting with any contract or asset on the blockchain. The ELEPHANT.MONEY community is a decentralized autonomous organization and is never liable for losses that happen using this user interface or the ELEPHANT.MONEY
+                                    protocol. ELEPHANT.MONEY is not endorsed by, directly affiliated with, maintained, authorized, or sponsored by bDollar Protocol</div>
+                                <div class="col-6">
+                                    <p class="mb-0">2021 © ELEPHANT.MONEY</p>
+                                </div>
+                                <div class="col-6 text-right social-icons">
+                                    <p><a href="https://t.me/elephant_money" class="footer-link"><img
+                                        class="footer-telegram" src="./img/telegram-logo.svg"/> Join us on Telegram</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js?t=1620896913521"></script>
+    <script src="js/bdo-money.bundle.js?t=1620896913521"></script>
+</body>
+
+</html>
