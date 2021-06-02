@@ -554,6 +554,9 @@ pre code {
   .container {
     max-width: 400px;
   }
+  /* .leaf2{
+    left: -39px !important;
+  } */
 }
 @media (min-width: 576px) {
   .container {
@@ -18161,7 +18164,8 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
   background-repeat: no-repeat;
   background-position-y: 0;
   /* background-color: #0b151b; */
-  background-color: #f1f7f6;
+  /* background-color: #f1f7f6; */
+  background-color: #30759e36;
   height: 1440px;
   margin-bottom: 0;
   padding-top: 0;
@@ -18780,6 +18784,30 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
 .feature-row {
   margin-top: 80px;
 }
+@media (max-width: 600px) {
+  .leaf div:nth-child(1){
+    width: 10%;
+  }
+  .leaf div:nth-child(2){
+    width: 20%;
+  }
+  .leaf div:nth-child(3){
+    width: 30%;
+  }
+  .leaf div:nth-child(4){
+    display: none;
+  }
+  .leaf div:nth-child(5){
+    display: none;
+  }
+  .leaf div:nth-child(6){
+    display: none;
+  }
+  .leaf div:nth-child(7){
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   .feature-row {
     margin-top: 40px;
@@ -19177,6 +19205,7 @@ body {
 .abt_content {
   box-shadow: 0 10px 40px 0 rgb(50 50 50 / 10%) !important;
   padding: 20px 30px;
+  background: white;
 }
 
 .abt_text {
@@ -19253,4 +19282,87 @@ body {
   .h_uper_text {
     font-size: 0.7rem !important;
   }
+}
+
+
+
+.leaf{
+  position:absolute ;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+.leaf div{
+position:absolute ;
+display:block ;
+}
+.leaf div:nth-child(1){
+  left:20%; 
+  animation:fall 15s linear infinite ;
+  animation-delay:-2s;
+
+}
+.leaf div:nth-child(2){
+  left:70%; 
+  animation:fall 15s linear infinite ;
+  animation-delay:-4s;
+}
+.leaf div:nth-child(3){
+  left:10%; 
+  animation:fall 20s linear infinite ;
+  animation-delay:-7s;
+  
+}
+.leaf div:nth-child(4){
+  left:50%; 
+ animation:fall 18s linear infinite ; 
+ animation-delay:-5s;
+}
+.leaf div:nth-child(5){
+  left:85%; 
+  animation:fall 14s linear infinite ;
+  animation-delay:-5s;
+}
+.leaf div:nth-child(6){
+  left:15%; 
+  animation:fall 16s linear infinite ;
+  animation-delay:-10s;
+}
+.leaf div:nth-child(7){
+  left:90%; 
+  animation:fall 15s linear infinite ;
+  animation-delay:-4s;
+}
+
+@keyframes fall{
+  0%{
+      opacity:1;
+      top:-10%;
+      transform:translateX (20px) rotate(0deg);
+  }
+  20%{
+      opacity:0.8;
+      transform:translateX (-20px) rotate(45deg);
+  }
+  40%{
+
+      transform:translateX (-20px) rotate(90deg);
+  }
+  60%{
+      
+     transform:translateX (-20px) rotate(135deg); 
+  }
+  80%{
+  
+      transform:translateX (-20px) rotate(180deg);
+  }
+  100%{
+      
+      top:110%;
+      transform:translateX (-20px) rotate(225deg);
+  }
+  }
+.leaf1{
+  transform: rotateX(180deg);
 }
