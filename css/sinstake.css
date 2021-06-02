@@ -13828,7 +13828,7 @@ button {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  background: #c39a2785;
+  background: rgb(31, 199, 212);
   color: white !important;
 }
 /* 
@@ -19124,11 +19124,7 @@ body {
 }
 
 .cn_walltet_btn {
-  background: -webkit-linear-gradient(
-    left,
-    rgba(45, 70, 191, 0.8509803921568627),
-    #33415d
-  ) !important;
+  background: #7b2cbf !important;
 }
 
 .roll_text {
@@ -19144,11 +19140,7 @@ body {
 
 .roll_claim a {
   display: block;
-  background: -webkit-linear-gradient(
-    left,
-    rgb(42 58 132 / 85%),
-    #38599afa
-  ) !important;
+  background: #7b2cbf !important;
   width: 150px;
   text-align: center;
   margin: 10px 0;
