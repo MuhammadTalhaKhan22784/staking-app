@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Ubuntu:wght@400;500&display=swap");
+
 .br-wrapper {
   display: inline-block;
   vertical-align: top;
@@ -13824,7 +13826,8 @@ button {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   background: #c39a2785;
-  color: white !important;}
+  color: white !important;
+}
 /* 
 .nav-tabs .nav-link.active::before,
 .nav-tabs .nav-item.show .nav-link::before {
@@ -17838,6 +17841,7 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
   font-size: 1rem;
   line-height: 1.6rem;
   color: #757575;
+  font-family: 'Poppins', sans-serif;
 }
 @media (max-width: 767px) {
   .landing-page p {
@@ -18157,7 +18161,7 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
   background-repeat: no-repeat;
   background-position-y: 0;
   /* background-color: #0b151b; */
-  background-color: white;
+  background-color: #f1f7f6;
   height: 1440px;
   margin-bottom: 0;
   padding-top: 0;
@@ -18284,6 +18288,8 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
 }
 .landing-page .home-text p {
   font-size: 1.1rem;
+  font-family: "Ubuntu", sans-serif !important;
+  font-weight: 500;
 }
 @media (max-width: 767px) {
   .landing-page .home-text p {
@@ -18344,7 +18350,7 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
   }
 }
 .landing-page i.large-icon {
-  font-size: 60px;
+  font-size: 40px;
   /* line-height: 110px; */
   background: -webkit-gradient(
     linear,
@@ -19173,7 +19179,12 @@ body {
   padding: 20px 30px;
 }
 
+.abt_text {
+  color: #98a9ab;
+}
+
 .abt_content h2 {
+  font-family: 'Poppins', sans-serif !important;
   color: #c3af21f2 !important;
   text-align: center;
   font-weight: 500;
@@ -19219,11 +19230,11 @@ body {
   animation: shine 2s infinite;
 }
 
-.stats_content h1{
+.stats_content h1 {
   margin: 0 !important;
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width: 375px) {
   .abt_content {
     padding: 20px 13px !important;
   }
@@ -19232,14 +19243,14 @@ body {
   }
 }
 
-@media screen and (max-width:370px) {
- .h_uper_text {
-   font-size: 0.8rem !important;
- }
+@media screen and (max-width: 370px) {
+  .h_uper_text {
+    font-size: 0.8rem !important;
+  }
 }
 
-@media screen and (max-width:344px) {
+@media screen and (max-width: 344px) {
   .h_uper_text {
     font-size: 0.7rem !important;
   }
- }
+}

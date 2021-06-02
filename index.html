@@ -1,139 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>SIN TOKEN POOL | SINSTAKE NETWORK</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.html" />
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
-      crossorigin="anonymous"
-    />
-    <!-- aos animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!--<meta name="theme-color" content="#ffffff">-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lobster|Nunito&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="font/iconsmind/style7f5a.css" />
-    <link
-      rel="stylesheet"
-      href="font/simple-line-icons/css/simple-line-icons7f5a.css"
-    />
-    <link rel="stylesheet" href="css/sinstake.css?v=1" />
-    <style>
-      .label-btn {
-        display: inline-block;
-        border: 1px solid #424242;
-        width: 28px;
-        height: 20px;
-        cursor: pointer;
-        font-size: 12px;
-        line-height: 20px;
+<head>
+  <meta charset="UTF-8" />
+  <title>SIN TOKEN POOL | SINSTAKE NETWORK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.html" />
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+  <!-- aos animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!--<meta name="theme-color" content="#ffffff">-->
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Nunito&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="font/iconsmind/style7f5a.css" />
+  <link rel="stylesheet" href="font/simple-line-icons/css/simple-line-icons7f5a.css" />
+  <link rel="stylesheet" href="css/sinstake.css?v=1" />
+  <style>
+    .label-btn {
+      display: inline-block;
+      border: 1px solid #424242;
+      width: 28px;
+      height: 20px;
+      cursor: pointer;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .label-btn:hover {
+      color: #969696;
+    }
+
+    .row-main-form {
+      margin-top: 55px;
+    }
+
+    .form-control[readonly] {
+      border: 1px solid #424242;
+      background: #232223;
+      cursor: not-allowed;
+    }
+
+    .numbers-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .number-wrap {
+      width: 160px;
+      height: 160px;
+      border: 1px solid #424242;
+      border-radius: 0.1rem;
+      margin-left: 5px;
+    }
+
+    .number-wrap:first-child {
+      margin-left: 0;
+    }
+
+    .luck-title {
+      /*font-family: 'Lobster', cursive;*/
+      font-size: 8rem !important;
+      color: whitesmoke;
+    }
+
+    .jackpot-title {
+      font-family: "Raleway Dots", cursive;
+      font-size: 4rem !important;
+      line-height: normal;
+      color: white;
+    }
+
+    .number-wrap .digit {
+      font-size: 80px;
+      line-height: normal;
+      font-weight: 700;
+    }
+
+    .number-wrap .digit-title {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .noUi-tooltip,
+    .noUi-handle {
+      cursor: pointer;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0;
+      /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+      /* Firefox */
+    }
+
+    #rollBtn {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .rolling-text {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        color: #ffffff;
       }
 
-      .label-btn:hover {
-        color: #969696;
+      100% {
+        color: #86367e;
       }
+    }
 
-      .row-main-form {
-        margin-top: 55px;
-      }
-
-      .form-control[readonly] {
-        border: 1px solid #424242;
-        background: #232223;
-        cursor: not-allowed;
-      }
-
-      .numbers-container {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 15px;
-      }
-
-      .number-wrap {
-        width: 160px;
-        height: 160px;
-        border: 1px solid #424242;
-        border-radius: 0.1rem;
-        margin-left: 5px;
-      }
-
-      .number-wrap:first-child {
-        margin-left: 0;
-      }
-
-      .luck-title {
-        /*font-family: 'Lobster', cursive;*/
-        font-size: 8rem !important;
-        color: whitesmoke;
-      }
-
-      .jackpot-title {
-        font-family: "Raleway Dots", cursive;
-        font-size: 4rem !important;
-        line-height: normal;
-        color: white;
-      }
-
-      .number-wrap .digit {
-        font-size: 80px;
-        line-height: normal;
-        font-weight: 700;
-      }
-
-      .number-wrap .digit-title {
-        font-size: 20px;
-        margin-top: 10px;
-      }
-
-      .noUi-tooltip,
-      .noUi-handle {
-        cursor: pointer;
-      }
-
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        /* display: none; <- Crashes Chrome on hover */
-        -webkit-appearance: none;
-        margin: 0;
-        /* <-- Apparently some margin are still there even though it's hidden */
-      }
-
-      input[type="number"] {
-        -moz-appearance: textfield;
-        /* Firefox */
-      }
-
-      #rollBtn {
-        font-size: 1.4rem;
-        line-height: 1;
-      }
-
-      .rolling-text {
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          color: #ffffff;
-        }
-        100% {
-          color: #86367e;
-        }
-      }
-
-      /* #topStatsContainer i {
+    /* #topStatsContainer i {
         background: -webkit-gradient(
           linear,
           left top,
@@ -145,1073 +137,694 @@
         background-clip: text;
       } */
 
-      #topStatsContainer i.large-icon {
-        font-size: 53px;
-      }
+    #topStatsContainer i.large-icon {
+      font-size: 40px;
+    }
 
-      #topStatsContainer .price-top-part > .text-large {
-        font-size: 22px !important;
-      }
+    #topStatsContainer .price-top-part>.text-large {
+      font-size: 22px !important;
+    }
 
-      #jackpotContainer .price-top-part > .text-large {
-        font-size: 22px !important;
-      }
-    </style>
-  </head>
+    #jackpotContainer .price-top-part>.text-large {
+      font-size: 22px !important;
+    }
+  </style>
+</head>
 
-  <body class="show-spinner">
-    <div class="landing-page">
-      <div class="mobile-menu">
-        <ul id="site-menu" class="navbar-nav"></ul>
-      </div>
+<body class="show-spinner">
+  <div class="landing-page">
+    <div class="mobile-menu">
+      <ul id="site-menu" class="navbar-nav"></ul>
+    </div>
 
-      <div class="main-container">
-        <nav class="landing-page-nav">
-          <div
-            class="container d-flex align-items-center justify-content-between"
-          >
-            <a class="pull-left" href="index.html">
-              <image
-                width="64px"
-                class="mr-2"
-                src="android-chrome-192x1923.png"
-              /><span class="text-white h_uper_text"
-                >SIN TOKEN POOL | SINSTAKE NETWORK</span
-              >
-            </a>
-          </div>
-        </nav>
+    <div class="main-container">
+      <nav class="landing-page-nav">
+        <div class="container d-flex align-items-center justify-content-between">
+          <a class="pull-left" href="index.html">
+            <image width="64px" class="mr-2" src="android-chrome-192x1923.png" /><span
+              class="text-white h_uper_text">SIN TOKEN POOL | SINSTAKE NETWORK</span>
+          </a>
+        </div>
+      </nav>
 
-        <div class="content-container" id="home">
-          <div class="section home">
-            <div class="container">
-              <div class="row home-row mb-2">
-                <div
-                  class="modal fade"
-                  id="tronWebModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                          TronWeb Not Detected
-                        </h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <h3>
-                          Metamask is required for access to SINSTAKE NETWORK
-                        </h3>
-                        <p>
-                          If you have MetaMask installed make sure you are
-                          logged in or have a wallet selected
-                        </p>
-                      </div>
-                      <div class="modal-footer text-center">
-                        <button
-                          type="button"
-                          class="btn btn-outline-semi-light default"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
+      <div class="content-container" id="home">
+        <div class="section home">
+          <div class="container">
+            <div class="row home-row mb-2">
+              <div class="modal fade" id="tronWebModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        TronWeb Not Detected
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>
-                  </div>
-                </div>
-
-                <div
-                  class="modal fade"
-                  id="invalidAmountModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Whoops!</h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <h3>Enter Amount in SINSTAKE</h3>
-                        <p>
-                          Please enter a valid integer amount, the minimum is
-                          10. Thanks!
-                        </p>
-                      </div>
-                      <div class="modal-footer text-center">
-                        <button
-                          type="button"
-                          class="btn btn-outline-semi-light default"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
+                    <div class="modal-body">
+                      <h3>
+                        Metamask is required for access to SINSTAKE NETWORK
+                      </h3>
+                      <p>
+                        If you have MetaMask installed make sure you are
+                        logged in or have a wallet selected
+                      </p>
                     </div>
-                  </div>
-                </div>
-
-                <div
-                  class="modal fade"
-                  id="invalidAddressModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Whoops!</h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <h3>Enter a valid SINSTAKE Address</h3>
-                        <p>Please check that SINSTAKE address again. Thanks!</p>
-                      </div>
-                      <div class="modal-footer text-center">
-                        <button
-                          type="button"
-                          class="btn btn-outline-semi-light default"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="modal fade"
-                  id="invalidRefAddressModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Whoops!</h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <h3>
-                          Invalid SINSTAKE Address Detected in Referral Link
-                        </h3>
-                        <p>Please check that SINSTAKE address again. Thanks!</p>
-                      </div>
-                      <div class="modal-footer text-center">
-                        <button
-                          type="button"
-                          class="btn btn-outline-semi-light default"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="modal fade"
-                  id="txModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Transaction Complete</h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <h3>You can track your transaction below</h3>
-                        <p>
-                          Check on BscScan:
-                          <span class="notranslate" id="txId"></span>
-                        </p>
-                      </div>
-                      <div class="modal-footer text-center">
-                        <button
-                          type="button"
-                          class="btn btn-outline-semi-light default"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="modal fade"
-                  id="txModalLuck"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Transaction not found</h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <h3>You can track your transaction below</h3>
-                        <p>
-                          Check on Tronscan:
-                          <span class="notranslate" id="txIdLuck"></span>
-                        </p>
-                      </div>
-                      <div class="modal-footer text-center">
-                        <button
-                          type="button"
-                          class="btn btn-outline-semi-light default"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="modal fade"
-                  id="txErrorModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Whoops!</h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <h3>Web3 Reported a Problem</h3>
-                        <p id="txErrorId"></p>
-                      </div>
-                      <div class="modal-footer text-center">
-                        <button
-                          type="button"
-                          class="btn btn-outline-semi-light default"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="modal fade"
-                  id="errorModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Houston, we have a problem!</h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <h3>Check your gauges</h3>
-                        <p id="errorId"></p>
-                      </div>
-                      <div class="modal-footer text-center">
-                        <button
-                          type="button"
-                          class="btn btn-outline-semi-light default"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="modal fade"
-                  id="alertModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Hey There!</h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <h3 id="alertTitle">Check your gauges</h3>
-                        <p id="alertId"></p>
-                      </div>
-                      <div class="modal-footer text-center">
-                        <button
-                          type="button"
-                          class="btn btn-outline-semi-light default"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">
+                        Close
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="home-main">
-                <div class="container mb-4 pt-4">
-                  <div class="home-text text-center row mb-4 mt-4">
-                    <div class="col-12 text-center">
-                      <div
-                        class="mb-2 text-center notranslate"
-                        data-aos="fade-down"
-                        data-aos-delay="1000"
-                        data-aos-duration="1000"
-                      >
-                        <img width="140px" src="img/logo/sin_anim.png" />
-                      </div>
-                      <p
-                        class="mt-4"
-                        data-aos="fade-down"
-                        data-aos-delay="1200"
-                        data-aos-duration="1000"
-                      >
-                        2% Active Reflection + %2 Daily Drip Pool Rewards
+              <div class="modal fade" id="invalidAmountModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Whoops!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>Enter Amount in SINSTAKE</h3>
+                      <p>
+                        Please enter a valid integer amount, the minimum is
+                        10. Thanks!
                       </p>
-                      <a
-                        data-aos="fade-up"
-                        data-aos-delay="1400"
-                        data-aos-duration="1000"
-                        onclick="connectWallet();"
-                        id="wallet-connect"
-                        class="btn text-white cn_walltet_btn"
-                        >CONNECT WALLET</a
-                      >
                     </div>
-                  </div>
-                  <h3 class="text-center text-white-50">
-                    <span class="notranslate" id="user-estimate"></span>
-                  </h3>
-                  <p class="text-muted text-small text-center">
-                    <span id="user-estimate-usdt"></span>
-                  </p>
-
-                  <div id="topStatsContainer" class="row gy-5">
-                    <div
-                      class="
-                        container
-                        col-12 col-xl-4 col-lg-4 col-md-4
-                        text-center
-                      "
-                    >
-                      <div
-                        class="price-top-part"
-                        data-aos="flip-down"
-                        data-aos-delay="1800"
-                        data-aos-duration="1000"
-                      >
-                        <i class="fas fa-coins large-icon"></i>
-                        <h5 class="mb-0 font-weight-semibold text-white-50">
-                          Rewards
-                        </h5>
-                        <p class="text-large">
-                          <span class="notranslate" id="user-vault">... </span>
-                        </p>
-                        <p class="">
-                          SIN Token<span
-                            class="notranslate"
-                            id="user-vault-usdt"
-                          ></span>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="
-                        container
-                        col-12 col-xl-4 col-lg-4 col-md-4
-                        text-center
-                      "
-                    >
-                      <div
-                        class="price-top-part"
-                        data-aos="flip-up"
-                        data-aos-delay="2000"
-                        data-aos-duration="1000"
-                      >
-                        <!-- <i class="iconsmind-Astronaut large-icon"></i> -->
-                        <i class="fas fa-coins large-icon"></i>
-                        <h5
-                          class="mb-0 font-weight-semibold text-white-50 mb-2"
-                        >
-                          Deposits
-                        </h5>
-                        <p class="text-large mb-2 text-white">
-                          <span class="notranslate" id="user-bonus">...</span>
-                        </p>
-                        <p class="text-muted text-small">
-                          SIN Token<span
-                            class="notranslate"
-                            id="user-bonus-usdt"
-                          ></span>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="
-                        container
-                        col-12 col-xl-4 col-lg-4 col-md-4
-                        text-center
-                      "
-                    >
-                      <div
-                        class="price-top-part"
-                        data-aos="flip-down"
-                        data-aos-delay="2200"
-                        data-aos-duration="1000"
-                      >
-                        <!-- <i class="iconsmind-Gaugage large-icon"></i> -->
-                        <i class="fas fa-coins large-icon"></i>
-                        <h5
-                          class="mb-0 font-weight-semibold text-white-50 mb-2"
-                        >
-                          Pool Share
-                        </h5>
-                        <p class="text-large mb-2 text-white">
-                          <span class="notranslate" id="user-percentage"
-                            >...
-                          </span>
-                        </p>
-                        <p class="text-muted text-small">%</p>
-                      </div>
-                    </div>
-                    <div
-                      class="
-                        container
-                        col-12 col-xl-4 col-lg-4 col-md-4
-                        text-center
-                      "
-                    >
-                      <div
-                        class="price-top-part"
-                        data-aos="flip-left"
-                        data-aos-delay="1200"
-                        data-aos-duration="1000"
-                      >
-                        <!-- <i class="iconsmind-Repeat-3 large-icon"></i> -->
-                        <i class="fas fa-coins large-icon"></i>
-                        <h5
-                          class="mb-0 font-weight-semibold text-white-50 mb-2"
-                        >
-                          Rolls
-                        </h5>
-                        <p class="text-large mb-2 text-white">
-                          <span class="notranslate" id="user-rolls">...</span>
-                        </p>
-                        <p class="text-muted text-small">Count</p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="
-                        container
-                        col-12 col-xl-4 col-lg-4 col-md-4
-                        text-center
-                      "
-                    >
-                      <div
-                        class="price-top-part"
-                        data-aos="flip-down"
-                        data-aos-delay="1400"
-                        data-aos-duration="1000"
-                      >
-                        <!-- <i class="iconsmind-Basket-Coins large-icon"></i> -->
-                        <i class="fas fa-coins large-icon"></i>
-
-                        <h5
-                          class="mb-0 font-weight-semibold text-white-50 mb-2"
-                        >
-                          Withdrawn
-                        </h5>
-                        <p class="text-large mb-2 text-white">
-                          <span class="notranslate" id="user-withdrawn"
-                            >...
-                          </span>
-                        </p>
-                        <p class="text-muted text-small">SIN Token</p>
-                      </div>
-                    </div>
-                    <div
-                      class="
-                        container
-                        col-12 col-xl-4 col-lg-4 col-md-4
-                        text-center
-                      "
-                    >
-                      <div
-                        class="price-top-part"
-                        data-aos="flip-right"
-                        data-aos-delay="1600"
-                        data-aos-duration="1000"
-                      >
-                        <!-- <i class="iconsmind-Back large-icon"></i> -->
-                        <i class="fas fa-coins large-icon"></i>
-                        <h5
-                          class="mb-0 font-weight-semibold text-white-50 mb-2"
-                        >
-                          Rolled
-                        </h5>
-                        <p class="text-large mb-2 text-white">
-                          <span class="notranslate" id="user-reinvested"
-                            >...
-                          </span>
-                        </p>
-                        <p class="text-muted text-small">SIN Token</p>
-                      </div>
-                    </div>
-
-                    <p
-                      class="col-12 roll_text mt-4 mb-3 text-center"
-                      data-aos="zoom-in"
-                      data-aos-delay="1800"
-                      data-aos-duration="1000"
-                    >
-                      Try to Roll at Least 3 Times a Day to Maximize Your Pool
-                      Share
-                    </p>
-                    <div class="roll_claim col-12 white mb-3">
-                      <a
-                        class="btn mb-0 mr-4"
-                        data-aos="zoom-in-down"
-                        data-aos-delay="1400"
-                        data-aos-duration="1000"
-                        onclick="reinvest();"
-                        >ROLL (REINVEST)</a
-                      >
-                      <a
-                        class="btn mb-0 mr-4"
-                        data-aos="zoom-in-up"
-                        data-aos-delay="1600"
-                        data-aos-duration="1000"
-                        onclick="withdraw();"
-                        >CLAIM (REWARDS)</a
-                      >
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">
+                        Close
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div class="container col-12 col-xl-6 col-lg-6 col-md-6 mb-4">
-                  <div class="text-right mb-2">
-                    <!--<a target="_blank" href="https://youtu.be/dZWaHXMtJYM" class="mr-4">Tutorial</a>-->
+              </div>
+
+              <div class="modal fade" id="invalidAddressModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Whoops!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>Enter a valid SINSTAKE Address</h3>
+                      <p>Please check that SINSTAKE address again. Thanks!</p>
+                    </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
                   </div>
-                  <div class="card mb-4">
-                    <div class="card-body">
-                      <h3>STAKE</h3>
+                </div>
+              </div>
 
-                      <form>
-                        <div class="form-group">
-                          <label for="buyAmount"> Amount</label>
-                          <input
-                            type="number"
-                            class="form-control"
-                            id="buyAmount"
-                            aria-describedby="buyTrxHelp"
-                            placeholder="Type"
-                          />
-                          <small class="form-text s_text"
-                            >Staked SIN Token:
-                            <span class="notranslate" id="buy-estimate"></span>
-                          </small>
-                        </div>
-                        <div class="stake_btn text-left">
-                          <a class="mb-0" id="buyTrx" onclick="buy();">STAKE</a>
-                        </div>
+              <div class="modal fade" id="invalidRefAddressModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Whoops!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>
+                        Invalid SINSTAKE Address Detected in Referral Link
+                      </h3>
+                      <p>Please check that SINSTAKE address again. Thanks!</p>
+                    </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-                        <div
-                          class="custom-switch custom-switch-primary-inverse"
-                        >
-                          <input
-                            class="custom-switch-input"
-                            id="stakingChb"
-                            type="checkbox"
-                          />
-                          <label
-                            class="custom-switch-btn align-middle mt-0"
-                            for="stakingChb"
-                          ></label>
-                          <small
-                            class="
+              <div class="modal fade" id="txModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Transaction Complete</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>You can track your transaction below</h3>
+                      <p>
+                        Check on BscScan:
+                        <span class="notranslate" id="txId"></span>
+                      </p>
+                    </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="txModalLuck" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Transaction not found</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>You can track your transaction below</h3>
+                      <p>
+                        Check on Tronscan:
+                        <span class="notranslate" id="txIdLuck"></span>
+                      </p>
+                    </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="txErrorModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Whoops!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>Web3 Reported a Problem</h3>
+                      <p id="txErrorId"></p>
+                    </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Houston, we have a problem!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>Check your gauges</h3>
+                      <p id="errorId"></p>
+                    </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Hey There!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3 id="alertTitle">Check your gauges</h3>
+                      <p id="alertId"></p>
+                    </div>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn btn-outline-semi-light default" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="home-main">
+              <div class="container mb-4 pt-4">
+                <div class="home-text text-center row mb-4 mt-4">
+                  <div class="col-12 text-center">
+                    <div class="mb-2 text-center notranslate" data-aos="fade-down" data-aos-delay="1000"
+                      data-aos-duration="1000">
+                      <img width="140px" src="img/logo/sin_anim.png" />
+                    </div>
+                    <p class="mt-4" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="1000">
+                      2% Active Reflection + %2 Daily Drip Pool Rewards
+                    </p>
+                    <a data-aos="fade-up" data-aos-delay="1400" data-aos-duration="1000" onclick="connectWallet();"
+                      id="wallet-connect" class="btn text-white cn_walltet_btn">CONNECT WALLET</a>
+                  </div>
+                </div>
+                <h3 class="text-center text-white-50">
+                  <span class="notranslate" id="user-estimate"></span>
+                </h3>
+                <p class="text-muted text-small text-center">
+                  <span id="user-estimate-usdt"></span>
+                </p>
+
+                <div id="topStatsContainer" class="row gy-5">
+                  <div class="
+                        container
+                        col-12 col-xl-4 col-lg-4 col-md-4
+                        text-center
+                      ">
+                    <div class="price-top-part" data-aos="flip-down" data-aos-delay="1800" data-aos-duration="1000">
+                      <i class="fas fa-coins large-icon"></i>
+                      <h5 class="mb-0 font-weight-semibold text-white-50">
+                        Rewards
+                      </h5>
+                      <p class="text-large">
+                        <span class="notranslate" id="user-vault">... </span>
+                      </p>
+                      <p class="">
+                        SIN Token<span class="notranslate" id="user-vault-usdt"></span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="
+                        container
+                        col-12 col-xl-4 col-lg-4 col-md-4
+                        text-center
+                      ">
+                    <div class="price-top-part" data-aos="flip-up" data-aos-delay="2000" data-aos-duration="1000">
+                      <!-- <i class="iconsmind-Astronaut large-icon"></i> -->
+                      <i class="fas fa-money-check-alt large-icon"></i>
+                      <h5 class="mb-0 font-weight-semibold text-white-50 mb-2">
+                        Deposits
+                      </h5>
+                      <p class="text-large mb-2 text-white">
+                        <span class="notranslate" id="user-bonus">...</span>
+                      </p>
+                      <p class="text-muted text-small">
+                        SIN Token<span class="notranslate" id="user-bonus-usdt"></span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="
+                        container
+                        col-12 col-xl-4 col-lg-4 col-md-4
+                        text-center
+                      ">
+                    <div class="price-top-part" data-aos="flip-down" data-aos-delay="2200" data-aos-duration="1000">
+                      <!-- <i class="iconsmind-Gaugage large-icon"></i> -->
+                      <i class="fas fa-share-square large-icon"></i>
+                      <h5 class="mb-0 font-weight-semibold text-white-50 mb-2">
+                        Pool Share
+                      </h5>
+                      <p class="text-large mb-2 text-white">
+                        <span class="notranslate" id="user-percentage">...
+                        </span>
+                      </p>
+                      <p class="text-muted text-small">%</p>
+                    </div>
+                  </div>
+                  <div class="
+                        container
+                        col-12 col-xl-4 col-lg-4 col-md-4
+                        text-center
+                      ">
+                    <div class="price-top-part" data-aos="flip-left" data-aos-delay="1200" data-aos-duration="1000">
+                      <!-- <i class="iconsmind-Repeat-3 large-icon"></i> -->
+                      <i class="fas fa-dice-d20 large-icon"></i>
+                      <h5 class="mb-0 font-weight-semibold text-white-50 mb-2">
+                        Rolls
+                      </h5>
+                      <p class="text-large mb-2 text-white">
+                        <span class="notranslate" id="user-rolls">...</span>
+                      </p>
+                      <p class="text-muted text-small">Count</p>
+                    </div>
+                  </div>
+
+                  <div class="
+                        container
+                        col-12 col-xl-4 col-lg-4 col-md-4
+                        text-center
+                      ">
+                    <div class="price-top-part" data-aos="flip-down" data-aos-delay="1400" data-aos-duration="1000">
+                      <!-- <i class="iconsmind-Basket-Coins large-icon"></i> -->
+                      <i class="fas fa-wallet large-icon"></i>
+
+                      <h5 class="mb-0 font-weight-semibold text-white-50 mb-2">
+                        Withdrawn
+                      </h5>
+                      <p class="text-large mb-2 text-white">
+                        <span class="notranslate" id="user-withdrawn">...
+                        </span>
+                      </p>
+                      <p class="text-muted text-small">SIN Token</p>
+                    </div>
+                  </div>
+                  <div class="
+                        container
+                        col-12 col-xl-4 col-lg-4 col-md-4
+                        text-center
+                      ">
+                    <div class="price-top-part" data-aos="flip-right" data-aos-delay="1600" data-aos-duration="1000">
+                      <!-- <i class="iconsmind-Back large-icon"></i> -->
+                      <i class="fas fa-scroll large-icon"></i>
+                      <h5 class="mb-0 font-weight-semibold text-white-50 mb-2">
+                        Rolled
+                      </h5>
+                      <p class="text-large mb-2 text-white">
+                        <span class="notranslate" id="user-reinvested">...
+                        </span>
+                      </p>
+                      <p class="text-muted text-small">SIN Token</p>
+                    </div>
+                  </div>
+
+                  <p class="col-12 roll_text mt-4 mb-3 text-center" data-aos="zoom-in" data-aos-delay="1800"
+                    data-aos-duration="1000">
+                    Try to Roll at Least 3 Times a Day to Maximize Your Pool
+                    Share
+                  </p>
+                  <div class="roll_claim col-12 white mb-3">
+                    <a class="btn mb-0 mr-4" data-aos="zoom-in-down" data-aos-delay="1400" data-aos-duration="1000"
+                      onclick="reinvest();">ROLL (REINVEST)</a>
+                    <a class="btn mb-0 mr-4" data-aos="zoom-in-up" data-aos-delay="1600" data-aos-duration="1000"
+                      onclick="withdraw();">CLAIM (REWARDS)</a>
+                  </div>
+                </div>
+              </div>
+              <div class="container col-12 col-xl-6 col-lg-6 col-md-6 mb-4">
+                <div class="text-right mb-2">
+                  <!--<a target="_blank" href="https://youtu.be/dZWaHXMtJYM" class="mr-4">Tutorial</a>-->
+                </div>
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <h3>STAKE</h3>
+
+                    <form>
+                      <div class="form-group">
+                        <label for="buyAmount"> Amount</label>
+                        <input type="number" class="form-control" id="buyAmount" aria-describedby="buyTrxHelp"
+                          placeholder="Type" />
+                        <small class="form-text s_text">Staked SIN Token:
+                          <span class="notranslate" id="buy-estimate"></span>
+                        </small>
+                      </div>
+                      <div class="stake_btn text-left">
+                        <a class="mb-0" id="buyTrx" onclick="buy();">STAKE</a>
+                      </div>
+
+                      <div class="custom-switch custom-switch-primary-inverse">
+                        <input class="custom-switch-input" id="stakingChb" type="checkbox" />
+                        <label class="custom-switch-btn align-middle mt-0" for="stakingChb"></label>
+                        <small class="
                               form-text
                               d-inline-block
                               align-middle
                               p-0
                               m-0
                               ml-2
-                            "
-                          >
-                            <span class="s_text" id="staking-status">...</span>
-                          </small>
-                        </div>
-                      </form>
-                    </div>
+                            ">
+                          <span class="s_text" id="staking-status">...</span>
+                        </small>
+                      </div>
+                    </form>
                   </div>
-                  <div class="card">
-                    <div class="card-body">
-                      <h3>UNSTAKE</h3>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h3>UNSTAKE</h3>
 
-                      <form>
-                        <div class="form-group">
-                          <label for="sellAmount">Amount</label>
-                          <input
-                            type="number"
-                            class="form-control"
-                            id="sellAmount"
-                            aria-describedby="sellTrxHelp"
-                            placeholder="Type"
-                          />
-                          <small id="sellTrx" class="form-text s_text"
-                            >Unstaked SIN Token:
-                            <span class="notranslate" id="sell-estimate"></span>
-                          </small>
-                        </div>
-                        <p class="stake_btn text-left">
-                          <a class="mb-0" onclick="sell();">UNSTAKE</a>
-                        </p>
-                      </form>
-                    </div>
+                    <form>
+                      <div class="form-group">
+                        <label for="sellAmount">Amount</label>
+                        <input type="number" class="form-control" id="sellAmount" aria-describedby="sellTrxHelp"
+                          placeholder="Type" />
+                        <small id="sellTrx" class="form-text s_text">Unstaked SIN Token:
+                          <span class="notranslate" id="sell-estimate"></span>
+                        </small>
+                      </div>
+                      <p class="stake_btn text-left">
+                        <a class="mb-0" onclick="sell();">UNSTAKE</a>
+                      </p>
+                    </form>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="row mb-4 mt-4">
-                <div class="col-12 col-xl-6 col-lg-6 col-md-6 text-left">
-                  <p class="white">
-                    Network:
-                    <span class="notranslate" id="network">...</span>
-                    &nbsp;&nbsp;&nbsp;
-                  </p>
-                </div>
-                <div
-                  class="
+            <div class="row mb-4 mt-4">
+              <div class="col-12 col-xl-6 col-lg-6 col-md-6 text-left">
+                <p class="white">
+                  Network:
+                  <span class="notranslate" id="network">...</span>
+                  &nbsp;&nbsp;&nbsp;
+                </p>
+              </div>
+              <div class="
                     col-12 col-xl-6 col-lg-6
                     text-xl-right text-lg-right text-md-right
-                  "
-                >
-                  <p class="white">
-                    Wallet:
-                    <span class="notranslate" id="walletAddress">...</span
-                    >&nbsp;&nbsp;&nbsp; Balance:
-                    <span class="notranslate" id="walletBalanceValue">...</span>
-                    SIN Token
-                  </p>
-                </div>
+                  ">
+                <p class="white">
+                  Wallet:
+                  <span class="notranslate" id="walletAddress">...</span>&nbsp;&nbsp;&nbsp; Balance:
+                  <span class="notranslate" id="walletBalanceValue">...</span>
+                  SIN Token
+                </p>
               </div>
+            </div>
 
-              <div class="row mb-4 mt-2">
-                <div
-                  class="
+            <div class="row mb-4 mt-2">
+              <div class="
                     abt_content
                     container
                     col-12 col-xl-6 col-lg-6 col-md-6
-                  "
-                >
-                  <h2
-                    class="text-white-50"
-                    data-aos="flip-down"
-                    data-aos-delay="1100"
-                    data-aos-duration="1000"
-                  >
-                    About
-                  </h2>
-                  <p
-                    class="text-white"
-                    data-aos="fade-left"
-                    data-aos-delay="1200"
-                    data-aos-duration="1000"
-                  >
-                    Sinstake Finance is Decentralized Finance Protocol (DEFI)
-                    Operating on a Binance Smart Chain which Provides a Staking
-                    Platform to it’s Players by Depositing BEP-20 Token Assets
-                    and Let Them Earn Active and Passive Dividend Earnings
-                    Daily. Sustainable Yield is being generated by Community
-                    Activities, Prize Pool Allocations and from Upcoming Pools.
-                    With the Power of Transparent Organization and Independent
-                    Audition of our Pools, Stored Earnings and Assets will be
-                    Resistant to Rug-Pulls and similar Dangers.
+                  ">
+                <h2 class="text-white-50" data-aos="flip-down" data-aos-delay="1100" data-aos-duration="1000">
+                  About
+                </h2>
+                <p class="abt_text" data-aos="fade-left" data-aos-delay="1200" data-aos-duration="1000">
+                  Sinstake Finance is Decentralized Finance Protocol (DEFI)
+                  Operating on a Binance Smart Chain which Provides a Staking
+                  Platform to it’s Players by Depositing BEP-20 Token Assets
+                  and Let Them Earn Active and Passive Dividend Earnings
+                  Daily. Sustainable Yield is being generated by Community
+                  Activities, Prize Pool Allocations and from Upcoming Pools.
+                  With the Power of Transparent Organization and Independent
+                  Audition of our Pools, Stored Earnings and Assets will be
+                  Resistant to Rug-Pulls and similar Dangers.
+                </p>
+                <p class="abt_text font-weight-bold" data-aos="fade-up" data-aos-delay="1250" data-aos-duration="1000">
+                  Contract<br /><a class="notranslate" target="_blank"
+                    href="https://bscscan.com/address/0xfC30ea56548A4Aeee6571bC9D86b7BBEeF4C4EaA">https://bscscan.com/address/0xfC30.....C4EaA</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="row pt-4 mt-4">
+              <div class="container stats_content col-12 text-center">
+                <h1 class="roll_text" data-aos="zoom-in" data-aos-delay="1250" data-aos-duration="1000">
+                  Stats
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="1450" data-aos-duration="1000">
+                  SINSTAKE NETWORK is a great way to earn SIN Token long
+                  term... Daily! Here are the numbers...
+                </p>
+              </div>
+
+              <div class="
+                    container
+                    col-12 col-xl-4 col-lg-4 col-md-4
+                    text-center
+                  ">
+                <div class="price-top-part" class="price-top-part" data-aos="flip-down" data-aos-delay="1800"
+                  data-aos-duration="1000">
+                  <i class="fas fa-user-friends large-icon"></i>
+                  <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
+                    Players
+                  </h5>
+                  <p class="text-large mb-2 text-white">
+                    <span class="notranslate" id="getTotalMembers">...</span>
                   </p>
-                  <p
-                    class="white"
-                    data-aos="fade-up"
-                    data-aos-delay="1250"
-                    data-aos-duration="1000"
-                  >
-                    Contract<br /><a
-                      class="notranslate"
-                      target="_blank"
-                      href="https://bscscan.com/address/0xfC30ea56548A4Aeee6571bC9D86b7BBEeF4C4EaA"
-                      >https://bscscan.com/address/0xfC30.....C4EaA</a
-                    >
+                  <p class="text-muted text-small">User Count</p>
+                </div>
+              </div>
+
+              <div class="
+                    container
+                    col-12 col-xl-4 col-lg-4 col-md-4
+                    text-center
+                  ">
+                <div class="price-top-part" data-aos="flip-up" data-aos-delay="2000" data-aos-duration="1000">
+                  <i class="far fa-credit-card large-icon"></i>
+                  <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
+                    Total Stake
+                  </h5>
+                  <p class="text-large mb-2 text-white">
+                    <span class="notranslate" id="totalSupply">...</span>
+                  </p>
+                  <p class="text-muted text-small">
+                    SIN Token
+                    <span class="notranslate" id="totalSupply-usdt"></span>
                   </p>
                 </div>
               </div>
 
-              <div class="row pt-4 mt-4">
-                <div class="container stats_content col-12 text-center">
-                  <h1
-                    class="roll_text"
-                    data-aos="zoom-in"
-                    data-aos-delay="1250"
-                    data-aos-duration="1000"
-                  >
-                    Stats
-                  </h1>
-                  <p
-                    data-aos="fade-up"
-                    data-aos-delay="1450"
-                    data-aos-duration="1000"
-                  >
-                    SINSTAKE NETWORK is a great way to earn SIN Token long
-                    term... Daily! Here are the numbers...
+              <div class="
+                    container
+                    col-12 col-xl-4 col-lg-4 col-md-4
+                    text-center
+                  ">
+                <div class="price-top-part" data-aos="flip-down" data-aos-delay="2200" data-aos-duration="1000">
+                  <i class="fas fa-coins large-icon"></i>
+                  <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
+                    Claimed Rewards
+                  </h5>
+                  <p class="text-large mb-2 text-white">
+                    <span id="totalClaims" class="notranslate">...</span>
                   </p>
-                </div>
-
-                <div
-                  class="
-                    container
-                    col-12 col-xl-4 col-lg-4 col-md-4
-                    text-center
-                  "
-                >
-                  <div
-                    class="price-top-part"
-                    class="price-top-part"
-                    data-aos="flip-down"
-                    data-aos-delay="1800"
-                    data-aos-duration="1000"
-                  >
-                    <i class="iconsmind-MaleFemale large-icon"></i>
-                    <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
-                      Players
-                    </h5>
-                    <p class="text-large mb-2 text-white">
-                      <span class="notranslate" id="getTotalMembers">...</span>
-                    </p>
-                    <p class="text-muted text-small">User Count</p>
-                  </div>
-                </div>
-
-                <div
-                  class="
-                    container
-                    col-12 col-xl-4 col-lg-4 col-md-4
-                    text-center
-                  "
-                >
-                  <div
-                    class="price-top-part"
-                    data-aos="flip-up"
-                    data-aos-delay="2000"
-                    data-aos-duration="1000"
-                  >
-                    <i class="iconsmind-Full-Moon large-icon"></i>
-                    <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
-                      Total Stake
-                    </h5>
-                    <p class="text-large mb-2 text-white">
-                      <span class="notranslate" id="totalSupply">...</span>
-                    </p>
-                    <p class="text-muted text-small">
-                      SIN Token
-                      <span class="notranslate" id="totalSupply-usdt"></span>
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="
-                    container
-                    col-12 col-xl-4 col-lg-4 col-md-4
-                    text-center
-                  "
-                >
-                  <div
-                    class="price-top-part"
-                    data-aos="flip-down"
-                    data-aos-delay="2200"
-                    data-aos-duration="1000"
-                  >
-                    <i class="iconsmind-Mine large-icon"></i>
-                    <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
-                      Claimed Rewards
-                    </h5>
-                    <p class="text-large mb-2 text-white">
-                      <span id="totalClaims" class="notranslate">...</span>
-                    </p>
-                    <p class="text-muted text-small">SIN Token</p>
-                  </div>
-                </div>
-
-                <div
-                  class="
-                    container
-                    col-12 col-xl-4 col-lg-4 col-md-4
-                    text-center
-                  "
-                >
-                  <div
-                    class="price-top-part"
-                    data-aos="flip-left"
-                    data-aos-delay="1200"
-                    data-aos-duration="1000"
-                  >
-                    <i class="iconsmind-Basket-Coins large-icon"></i>
-                    <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
-                      Dividend Pool
-                    </h5>
-                    <p class="text-large mb-2 text-white">
-                      <span class="notranslate" id="dividendPool">...</span>
-                    </p>
-                    <p class="text-muted text-small">
-                      SIN Token
-                      <span class="notranslate" id="dividendPool-usdt"></span>
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="
-                    container
-                    col-12 col-xl-4 col-lg-4 col-md-4
-                    text-center
-                  "
-                >
-                  <div
-                    class="price-top-part"
-                    data-aos="flip-down"
-                    data-aos-delay="1400"
-                    data-aos-duration="1000"
-                  >
-                    <i class="iconsmind-Coins large-icon"></i>
-                    <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
-                      Contract Balance
-                    </h5>
-                    <p class="text-large mb-2 text-white">
-                      <span class="notranslate" id="contractBalance">...</span>
-                    </p>
-                    <p class="text-muted text-small">
-                      SIN Token
-                      <span
-                        class="notranslate"
-                        id="contractBalance-usdt"
-                      ></span>
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="
-                    container
-                    col-12 col-xl-4 col-lg-4 col-md-4
-                    text-center
-                  "
-                >
-                  <div
-                    class="price-top-part"
-                    data-aos="flip-right"
-                    data-aos-delay="1600"
-                    data-aos-duration="1000"
-                  >
-                    <i class="iconsmind-Sync large-icon"></i>
-                    <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
-                      Transactions
-                    </h5>
-                    <p class="text-large mb-2 text-white">
-                      <span class="notranslate" id="totalTxs">...</span>
-                    </p>
-                    <p class="text-muted text-small">Txs</p>
-                  </div>
+                  <p class="text-muted text-small">SIN Token</p>
                 </div>
               </div>
 
-              <div class="row mb-4 mt-4">
-                <div class="col-12 mb-4">
-                  <div class="card">
-                    <div class="card-header">
-                      <ul class="nav nav-tabs card-header-tabs" role="tablist">
-                        <li class="nav-item">
-                          <a
-                            class="nav-link active"
-                            id="first-tab"
-                            data-toggle="tab"
-                            href="#buyActivityContent"
-                            role="tab"
-                            aria-controls="buyActivityContent"
-                            aria-selected="true"
-                            >DEPOSITS</a
-                          >
-                        </li>
-                        <li class="nav-item">
-                          <a
-                            class="nav-link"
-                            id="second-tab"
-                            data-toggle="tab"
-                            href="#dumpActivityContent"
-                            role="tab"
-                            aria-controls="dumpActivityContent"
-                            aria-selected="true"
-                            >WITHDRAWALS</a
-                          >
-                        </li>
-                        <!--<li class="nav-item">
+              <div class="
+                    container
+                    col-12 col-xl-4 col-lg-4 col-md-4
+                    text-center
+                  ">
+                <div class="price-top-part" data-aos="flip-left" data-aos-delay="1200" data-aos-duration="1000">
+                  <i class="fas fa-share-square large-icon"></i>
+                  <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
+                    Dividend Pool
+                  </h5>
+                  <p class="text-large mb-2 text-white">
+                    <span class="notranslate" id="dividendPool">...</span>
+                  </p>
+                  <p class="text-muted text-small">
+                    SIN Token
+                    <span class="notranslate" id="dividendPool-usdt"></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="
+                    container
+                    col-12 col-xl-4 col-lg-4 col-md-4
+                    text-center
+                  ">
+                <div class="price-top-part" data-aos="flip-down" data-aos-delay="1400" data-aos-duration="1000">
+                 <i class="fas fa-hand-holding-usd large-icon"></i>
+                  <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
+                    Contract Balance
+                  </h5>
+                  <p class="text-large mb-2 text-white">
+                    <span class="notranslate" id="contractBalance">...</span>
+                  </p>
+                  <p class="text-muted text-small">
+                    SIN Token
+                    <span class="notranslate" id="contractBalance-usdt"></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="
+                    container
+                    col-12 col-xl-4 col-lg-4 col-md-4
+                    text-center
+                  ">
+                <div class="price-top-part" data-aos="flip-right" data-aos-delay="1600" data-aos-duration="1000">
+                  <i class="fas fa-receipt large-icon"></i>
+                  <h5 class="mb-0 font-weight-semibold color-theme-1 mb-4">
+                    Transactions
+                  </h5>
+                  <p class="text-large mb-2 text-white">
+                    <span class="notranslate" id="totalTxs">...</span>
+                  </p>
+                  <p class="text-muted text-small">Txs</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4 mt-4">
+              <div class="col-12 mb-4">
+                <div class="card">
+                  <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="first-tab" data-toggle="tab" href="#buyActivityContent"
+                          role="tab" aria-controls="buyActivityContent" aria-selected="true">DEPOSITS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="second-tab" data-toggle="tab" href="#dumpActivityContent" role="tab"
+                          aria-controls="dumpActivityContent" aria-selected="true">WITHDRAWALS</a>
+                      </li>
+                      <!--<li class="nav-item">
                                             <a class="nav-link" id="fifth-tab" data-toggle="tab"
                                                href="#distributionActivityContent"
                                                role="tab" aria-controls="distributionActivityContent"
                                                aria-selected="true">Buy</a>
                                         </li>-->
 
-                        <!--<li class="nav-item">
+                      <!--<li class="nav-item">
                                             <a class="nav-link" id="fourth-tab" data-toggle="tab"
                                                href="#statsContent"
                                                role="tab" aria-controls="statsContent"
                                                aria-selected="true">Stats</a>
                                         </li>-->
-                      </ul>
-                    </div>
-                    <div class="card-body">
-                      <div class="tab-content">
-                        <div
-                          class="tab-pane fade show active"
-                          id="buyActivityContent"
-                          role="tabpanel"
-                          aria-labelledby="first-tab"
-                        ></div>
-                        <div
-                          class="tab-pane fade"
-                          id="dumpActivityContent"
-                          role="tabpanel"
-                          aria-labelledby="second-tab"
-                        ></div>
-                        <div
-                          class="tab-pane fade"
-                          id="distributionActivityContent"
-                          role="tabpanel"
-                          aria-labelledby="second-tab"
-                        ></div>
-                        <div
-                          class="tab-pane fade"
-                          id="leaderActivityContent"
-                          role="tabpanel"
-                          aria-labelledby="fifth-tab"
-                        >
-                          <div id="innerLeaderActivityContent">
-                            <h2>Loading...</h2>
-                          </div>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <div class="tab-content">
+                      <div class="tab-pane fade show active" id="buyActivityContent" role="tabpanel"
+                        aria-labelledby="first-tab"></div>
+                      <div class="tab-pane fade" id="dumpActivityContent" role="tabpanel" aria-labelledby="second-tab">
+                      </div>
+                      <div class="tab-pane fade" id="distributionActivityContent" role="tabpanel"
+                        aria-labelledby="second-tab"></div>
+                      <div class="tab-pane fade" id="leaderActivityContent" role="tabpanel" aria-labelledby="fifth-tab">
+                        <div id="innerLeaderActivityContent">
+                          <h2>Loading...</h2>
                         </div>
-                        <div
-                          class="tab-pane fade"
-                          id="statsContent"
-                          role="tabpanel"
-                          aria-labelledby="fourth-tab"
-                        >
-                          <div class="row">
-                            <p class="col-6" id="chart-loading"></p>
-                            <p class="text-right col-6">
-                              <a
-                                href="javascript:loadChartData();"
-                                class="default mb-0"
-                                >Refresh</a
-                              >
-                            </p>
-                          </div>
-                          <div class="col-12 mb-4">
-                            <div class="card mb-4">
-                              <div class="card-body">
-                                <h3 class="mb-4">Balance</h3>
-                                <div class="row">
-                                  <div class="col-lg-12 mb-5">
-                                    <div class="chart-container">
-                                      <canvas id="balanceChart"></canvas>
-                                    </div>
+                      </div>
+                      <div class="tab-pane fade" id="statsContent" role="tabpanel" aria-labelledby="fourth-tab">
+                        <div class="row">
+                          <p class="col-6" id="chart-loading"></p>
+                          <p class="text-right col-6">
+                            <a href="javascript:loadChartData();" class="default mb-0">Refresh</a>
+                          </p>
+                        </div>
+                        <div class="col-12 mb-4">
+                          <div class="card mb-4">
+                            <div class="card-body">
+                              <h3 class="mb-4">Balance</h3>
+                              <div class="row">
+                                <div class="col-lg-12 mb-5">
+                                  <div class="chart-container">
+                                    <canvas id="balanceChart"></canvas>
                                   </div>
                                 </div>
                               </div>
@@ -1224,41 +837,37 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="section footer mb-0">
-              <div class="separator mt-5"></div>
-              <div class="container copyright pt-5 pb-5">
-                <div class="row">
-                  <div class="col-12 mb-4">
-                    DISCLAIMER: Please do your own research before using this
-                    application. To the greatest extent possible the
-                    SINSTAKE.NET protocol has been implemented to be accessible
-                    directly on-chain without a user interface. This website and
-                    associated APIs have been provided for convenience.
-                    Ultimately you are interacting with no other party other
-                    than the blockchain itself and are 100% responsible for your
-                    transactions. Please do your own research before interacting
-                    with any contract or asset on the blockchain. The
-                    SINSTAKE.NET community is a decentralized autonomous
-                    organization and is never liable for losses that happen
-                    using this user interface or the SINSTAKE.NET protocol.
-                  </div>
-                  <div class="col-6">
-                    <p class="mb-0">
-                      2021 © SINTAKE.NET <small>a Sinstake Finance Annex</small>
-                    </p>
-                  </div>
-                  <div class="col-6 text-right social-icons">
-                    <p>
-                      <a href="https://t.me/sinstakefinance" class="footer-link"
-                        ><img
-                          class="footer-telegram"
-                          src="img/telegram-logo.svg"
-                        />
-                        Join us on Telegram</a
-                      >
-                    </p>
-                  </div>
+          <div class="section footer mb-0">
+            <div class="separator mt-5"></div>
+            <div class="container copyright pt-5 pb-5">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  DISCLAIMER: Please do your own research before using this
+                  application. To the greatest extent possible the
+                  SINSTAKE.NET protocol has been implemented to be accessible
+                  directly on-chain without a user interface. This website and
+                  associated APIs have been provided for convenience.
+                  Ultimately you are interacting with no other party other
+                  than the blockchain itself and are 100% responsible for your
+                  transactions. Please do your own research before interacting
+                  with any contract or asset on the blockchain. The
+                  SINSTAKE.NET community is a decentralized autonomous
+                  organization and is never liable for losses that happen
+                  using this user interface or the SINSTAKE.NET protocol.
+                </div>
+                <div class="col-6">
+                  <p class="mb-0">
+                    2021 © SINTAKE.NET <small>a Sinstake Finance Annex</small>
+                  </p>
+                </div>
+                <div class="col-6 text-right social-icons">
+                  <p>
+                    <a href="https://t.me/sinstakefinance" class="footer-link"><img class="footer-telegram"
+                        src="img/telegram-logo.svg" />
+                      Join us on Telegram</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -1266,35 +875,23 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <script type="text/javascript">
-      const COLLATERAL_SYMBOL = "sinstake";
-    </script>
-    <script src="js/index7f5a.js"></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/web3%401.2.11/dist/web3.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/web3modal%401.9.0/dist/index.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/evm-chains%400.2.0/dist/umd/index.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/%40walletconnect/web3-provider%401.2.1/dist/umd/index.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/fortmatic%402.0.6/dist/fortmatic.js"
-    ></script>
-    <script src="js/bdo-money.bundle7f5a.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+  <script type="text/javascript">
+    const COLLATERAL_SYMBOL = "sinstake";
+  </script>
+  <script src="js/index7f5a.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/web3%401.2.11/dist/web3.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/web3modal%401.9.0/dist/index.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/evm-chains%400.2.0/dist/umd/index.min.js"></script>
+  <script type="text/javascript"
+    src="https://unpkg.com/%40walletconnect/web3-provider%401.2.1/dist/umd/index.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/fortmatic%402.0.6/dist/fortmatic.js"></script>
+  <script src="js/bdo-money.bundle7f5a.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
 </html>
