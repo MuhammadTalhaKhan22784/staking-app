@@ -18361,8 +18361,8 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
     linear,
     left top,
     left bottom,
-    from(#3582b3),
-    to(#145388)
+    from(#41d42f),
+    to(#153a5f)
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -19107,6 +19107,7 @@ body {
   margin: 25px auto;
   box-shadow: 0 10px 40px 0 rgb(50 50 50/10%) !important;
   background-color: white;
+  border-radius: 14px;
 }
 
 .price-top-part h5 {
